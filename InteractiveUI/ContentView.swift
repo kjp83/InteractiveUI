@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var name2 = ""
+    @State private var textTitle2 = ""
    @State private var name = ""
     @State private var textTitle = "What is your name?"
     var body: some View {
@@ -26,7 +28,7 @@ struct ContentView: View {
                 TextField("Type your name here...", text: $name )
                     .multilineTextAlignment(.center)
                     .font(.title)
-                    .border(Color.gray, width:1)
+                    .border(Color.pink, width:4)
                 
                 Button("Submit Name") {
                     textTitle = "WELCOME, \(name)!"
@@ -35,6 +37,21 @@ struct ContentView: View {
                 .buttonStyle(.borderedProminent)
                 .tint(.pink)
                 
+                Text("When were you born?")
+                    .font(.title)
+                    .fontWeight(.medium)
+                
+                TextField(textTitle2, text: $name2 )
+                    .multilineTextAlignment(.center)
+                    .font(.title)
+                    .border(Color.pink, width:4)
+                
+                Button("Submit Name") {
+                    textTitle = "WELCOME, \(name)!"
+                }
+                .font(.title2)
+                .buttonStyle(.borderedProminent)
+                .tint(.pink)
                         
             }
             
@@ -42,7 +59,12 @@ struct ContentView: View {
         }
         
         
-        .padding()
+        
+            
+            
+            
+            
+            
     }
 }
 
